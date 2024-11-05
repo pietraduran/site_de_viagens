@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Viagens</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Viaje Conosco</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Destinos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="destinosDropdown">
+              <li><a class="dropdown-item" href="#">Paris</a></li>
+              <li><a class="dropdown-item" href="#">Bali</a></li>
+              <li><a class="dropdown-item" href="#">Nova York</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel de Destinos -->
+  <div id="destinosCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://cdn.pixabay.com/photo/2020/07/23/21/34/arc-de-triomphe-5432392_1280.jpg" class="d-block w-100" alt="paris 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Explore Paris</h5>
+          <p>A cidade luz espera por você!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn.pixabay.com/photo/2024/06/18/21/37/bali-8838762_1280.jpg" class="d-block w-100" alt="Destino 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Descubra Bali</h5>
+          <p>Paisagens tropicais e praias paradisíacas.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn.pixabay.com/photo/2022/11/07/20/23/new-york-7577186_1280.jpg" class="d-block w-100" alt="Destino 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Aventura em Nova York</h5>
+          <p>A cidade que nunca dorme.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#destinosCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#destinosCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+
+  <!-- Abas para Categorias -->
+  <div class="container tabs-container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="destaques-tab" data-bs-toggle="tab" data-bs-target="#destaques" type="button" role="tab" aria-controls="destaques" aria-selected="true">Destaques</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="promocoes-tab" data-bs-toggle="tab" data-bs-target="#promocoes" type="button" role="tab" aria-controls="promocoes" aria-selected="false">Promoções</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="destaques" role="tabpanel" aria-labelledby="destaques-tab">
+        <p>Veja nossos destinos mais procurados!</p>
+      </div>
+      <div class="tab-pane fade" id="promocoes" role="tabpanel" aria-labelledby="promocoes-tab">
+        <p>Confira as promoções imperdíveis!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid de Cards de Destinos -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Destinos Incríveis</h2>
+    <div class="row">
+      <!-- Card de Paris -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="./images/paris.jpeg" class="card-img-top" alt="Paris">
+          <div class="card-body">
+            <h5 class="card-title">Paris, França</h5>
+            <p class="card-text">Desfrute dos pontos turísticos mais famosos do mundo e uma cultura rica.</p>
+            <button class="btn btn-primary" onclick="showToast()">Saiba Mais</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card de Bali -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="./images/bali.jpeg" class="card-img-top" alt="Bali">
+          <div class="card-body">
+            <h5 class="card-title">Bali, Indonésia</h5>
+            <p class="card-text">Relaxe em praias paradisíacas e explore templos encantadores.</p>
+            <button class="btn btn-primary" onclick="showToast()">Saiba Mais</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card de Nova York -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="./images/new york.jpeg" class="card-img-top" alt="Nova York">
+          <div class="card-body">
+            <h5 class="card-title">Nova York, EUA</h5>
+            <p class="card-text">Experimente a energia e diversidade da cidade que nunca dorme.</p>
+            <button class="btn btn-primary" onclick="showToast()">Saiba Mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Toast de Notificação -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Notificação</strong>
+        <small>Agora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Você clicou em "Saiba Mais"!
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Contato -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contato</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Entre em contato conosco para mais informações sobre nossos destinos.</p>
+          <!-- Formulário de contato opcional -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Função para exibir o Toast
+    function showToast() {
+      const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+      toast.show();
+    }
+  </script>
+</body>
+</html>
